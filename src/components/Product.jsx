@@ -23,7 +23,7 @@ export default function Product() {
   return (
     <section className="pt-10 sm:pt-16">
       <Container>
-        <h2 className="text-center text-2xl font-bold mb-6">PRODUK</h2>
+      <h3 className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit">PRODUK</h3>
         <div className="flex flex-wrap items-center gap-4 mb-6">
           <h5 className="text-lg font-medium">Kategori :</h5>
           <select

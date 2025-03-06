@@ -1,8 +1,8 @@
 import Banner from "@/components/Banner";
 import Intro from "@/components/Intro";
 import Superiority from "@/components/Superiority";
-import Service from "@/components/service";
-import Product from "@/components/product";
+import Service from "@/components/Service";
+import Product from "@/components/Product";
 
 import Frame from "@/components/Frame";
 

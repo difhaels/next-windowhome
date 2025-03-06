@@ -24,7 +24,7 @@ function Services() {
   return (
     <section className="pt-10 sm:pt-16">
       <Container>
-      <h3 className="text-center text-2xl font-semibold mb-6">LAYANAN KAMI</h3>
+      <h3 className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit">LAYANAN KAMI</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {services.map((service, index) => (
           <div key={index} className="bg-white shadow-md p-4 text-center rounded-lg" data-aos="fade-up">
