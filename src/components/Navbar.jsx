@@ -14,9 +14,9 @@ function Navbar() {
     `block px-4 py-2 ${pathname === path ? "text-white" : "text-gray-400 hover:text-white"}`;
 
   return (
-    <nav className="bg-gray-900 fixed top-0 w-full z-50 shadow-md">
+    <nav className="bg-[#212529] fixed top-0 w-full z-50 shadow-md">
       <Container>
-        <div className="flex items-center justify-between sm:justify-start py-3">
+        <div className="flex items-center justify-between sm:justify-start py-3 sm:gap-3">
           <Link href="/" className="flex items-center space-x-3">
             <Image
               src={logo}
