@@ -7,7 +7,7 @@ import {
   FaMapMarkerAlt,
   FaFacebook,
   FaInstagram,
-  FaTwitter,
+  FaYoutube,
 } from "react-icons/fa";
 import Container from "./Container";
 
@@ -46,8 +46,8 @@ export default function Contact() {
             </div>
             <div className="mb-4">
               <h4 className="text-2xl text-[#222F99]">Kontak</h4>
-              <p className="flex items-center gap-2 mb-1">
-                <FaPhoneAlt className="text-[#FF2E63]" /> +62 812-3456-7890
+              <p className="flex items-center gap-2 my-2">
+                <FaPhoneAlt className="text-[#FF2E63]" /> +62 821-2410-6727
               </p>
               <p className="flex items-center gap-2 ">
                 <FaEnvelope className="text-[#FF2E63]" /> info@windowhome.com
@@ -55,7 +55,7 @@ export default function Contact() {
             </div>
             <div className="mb-4">
               <h4 className="text-2xl text-[#222F99]">Workshop</h4>
-              <p className="flex items-start gap-2">
+              <p className="flex items-start gap-2 mt-2">
                 <FaMapMarkerAlt className="text-[#FF2E63]" /> RT001, RW05,
                 No257, KP.Cibitung, Kel.Padurenan, Kec.Mustika Jaya, Kota Bekasi
               </p>
@@ -63,18 +63,18 @@ export default function Contact() {
             <div>
               <h4 className="text-2xl text-[#222F99]">Ikuti Kami</h4>
               <div className="flex gap-3 mt-2">
-                <a href="https://facebook.com" target="_blank" rel="noreferrer">
+                <a href="https://www.facebook.com/share/16PPWKvsww/" target="_blank" rel="noreferrer">
                   <FaFacebook className="text-blue-600 text-2xl" />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/kusenaluminium_windowhome?igsh=MWVnNm16bmFnbXp0cw=="
                   target="_blank"
                   rel="noreferrer"
                 >
                   <FaInstagram className="text-pink-500 text-2xl" />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noreferrer">
-                  <FaTwitter className="text-blue-400 text-2xl" />
+                <a href="https://youtube.com/@kusenaluminiumwindowhome?si=df82Nwe1DvxC8AXb" target="_blank" rel="noreferrer">
+                  <FaYoutube className="text-red-500 text-2xl" />
                 </a>
               </div>
             </div>
