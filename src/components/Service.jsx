@@ -23,7 +23,7 @@ function Services() {
 
   return (
     <section className="pt-16">
-      <Container>dc vvvvvv j ijusca jdu wea i udeopqwrkpo 3o4k5op3345k 6 okeoptoktgkdop[pftoi500797 0 -ot4560 5b xcbndfb]
+      <Container>
       <h3 className="text-center text-2xl font-semibold mb-6">LAYANAN KAMI</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {services.map((service, index) => (
