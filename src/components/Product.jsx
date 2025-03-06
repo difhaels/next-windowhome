@@ -21,7 +21,7 @@ export default function Product() {
       : categories.filter((category) => category.name === selectedCategory);
 
   return (
-    <section className="pt-16">
+    <section className="pt-10 sm:pt-16">
       <Container>
         <h2 className="text-center text-2xl font-bold mb-6">PRODUK</h2>
         <div className="flex flex-wrap items-center gap-4 mb-6">

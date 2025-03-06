@@ -1,8 +1,10 @@
-import Navbar from "../../components/Navbar"
-export default function Product() {
+import Frame from "@/components/Frame";
+import Product from "@/components/Product";
+
+export default function Page() {
   return (
-    <>
-      <Navbar />
-    </>
+    <Frame>
+      <Product />
+    </Frame>
   );
 }
