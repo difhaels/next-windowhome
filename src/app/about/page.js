@@ -1,10 +1,10 @@
 import Frame from "@/components/Frame";
-import Tentang from "@/components/Tentang";
+import About from "@/components/About";
 
-export default function About() {
+export default function Page() {
   return (
     <Frame>
-      <Tentang />
+      <About />
     </Frame>
   );
 }

@@ -22,7 +22,7 @@ function Services() {
   ];
 
   return (
-    <section className="pt-16">
+    <section className="pt-10 sm:pt-16">
       <Container>
       <h3 className="text-center text-2xl font-semibold mb-6">LAYANAN KAMI</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

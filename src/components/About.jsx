@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from './Container';
 
-function Tentang() {
+function About() {
   return (
     <section className='pt-10 sm:pt-16'>
       <Container>
@@ -34,4 +34,4 @@ function Tentang() {
   );
 }
 
-export default Tentang;
+export default About;
