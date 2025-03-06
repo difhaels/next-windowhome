@@ -1,8 +1,10 @@
-import Navbar from "../../components/Navbar"
-export default function Contact() {
+import Frame from "@/components/Frame";
+import Contact from "@/components/Contact";
+
+export default function Page() {
   return (
-    <>
-      <Navbar />
-    </>
+    <Frame>
+      <Contact />
+    </Frame>
   );
 }
