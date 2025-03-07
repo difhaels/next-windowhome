@@ -18,8 +18,8 @@ export default function Contact() {
     e.preventDefault();
 
     emailjs
-      .sendForm("service_xm9lavy", "template_rfa93iy", form.current, {
-        publicKey: "Ggx8QKUvf0yO2OLdX",
+      .sendForm("service_nbfm76v", "template_8fbx5id", form.current, {
+        publicKey: "o1twaftzXdYckdrKK",
       })
       .then(
         () => {
