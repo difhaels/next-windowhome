@@ -41,7 +41,7 @@ export default function Contact() {
           {/* Left Section */}
           <div className="p-6 ">
             <div className="flex items-center mb-4">
-              <img src="/logo.png" alt="Logo" className="w-12 h-12 mr-3" />
+              <img src="/logo.png" alt="Logo" className="w-auto h-16 mr-3" />
               <h2 className="text-xl font-semibold">WindowHome</h2>
             </div>
             <div className="mb-4">
