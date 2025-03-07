@@ -4,7 +4,7 @@ import Product from "@/components/Product";
 export default function Page() {
   return (
     <Frame>
-      <Product />
+      <Product full={true}/>
     </Frame>
   );
 }
