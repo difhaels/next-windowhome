@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Container from "./Container";
+import Image from "next/image";
 
 export default function Product({ full }) {
   const [categories, setCategories] = useState([]);
@@ -78,8 +79,19 @@ export default function Product({ full }) {
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                   {category.images.map((image, idx) => (
                     <div key={idx} className="bg-white shadow-md overflow-hidden">
-                      <img src={image.url} alt={image.name} className="w-full h-40 object-cover" />
-                      <p className="text-center text-sm font-medium p-2">{image.name.replace(/-/g, " ")}</p>
+                      <div className="relative w-full h-40">
+                        <Image 
+                          src={image.url} 
+                          alt={image.name} 
+                          fill 
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="text-center text-sm font-medium p-2">
+                        {image.name.replace(/-/g, " ")}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -88,9 +100,21 @@ export default function Product({ full }) {
           : <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
               {randomProducts.map((image, idx) => (
                 <div key={idx} className="bg-white shadow-md overflow-hidden">
-                  <img src={image.url} alt={image.name} className="w-full h-40 object-cover" />
-                  <p className="text-center text-sm font-medium p-2">{image.name.replace(/-/g, " ")}</p>
+                  <div className="relative w-full h-40">
+                    <Image 
+                      src={image.url} 
+                      alt={image.name} 
+                      fill 
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p className="text-center text-sm font-medium p-2">
+                    {image.name.replace(/-/g, " ")}
+                  </p>
                 </div>
+                
               ))}
             </div>}
 
