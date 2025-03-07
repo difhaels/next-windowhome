@@ -1,39 +1,76 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import cloudinary from '../lib/cloudinary.js';
+import mongoose from "mongoose";
+import { v2 as cloudinary } from "cloudinary";
+import fs from "fs";
+import path from "path";
+import dotenv from "dotenv";
 
-// Fix __dirname untuk ES module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+dotenv.config();
 
-const uploadFolder = async (folderName) => {
-  const folderPath = path.join(process.cwd(), 'public', folderName); // Path dari root
+// Koneksi ke MongoDB
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
+// Schema MongoDB
+const ProductSchema = new mongoose.Schema({
+  category: String,
+  imageUrl: String,
+  name: String,
+  createdAt: { type: Date, default: Date.now },
+});
+
+const Product = mongoose.model("Product", ProductSchema);
+
+// Konfigurasi Cloudinary
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+// **Fungsi Upload Folder ke Cloudinary + Simpan ke MongoDB**
+const uploadFolder = async (folderPath, category) => {
   if (!fs.existsSync(folderPath)) {
-    console.error(`Error: Folder ${folderPath} tidak ditemukan.`);
+    console.log(`⚠️ Folder "${folderPath}" tidak ditemukan.`);
     return;
   }
 
   const files = fs.readdirSync(folderPath);
 
-  if (files.length === 0) {
-    console.error(`Error: Folder ${folderName} kosong.`);
-    return;
-  }
-
   for (const file of files) {
     const filePath = path.join(folderPath, file);
-    const result = await cloudinary.uploader.upload(filePath, {
-      folder: folderName,
-    });
+    if (!fs.lstatSync(filePath).isFile()) continue; // Skip jika bukan file
 
-    console.log(`Uploaded: ${file} -> ${result.secure_url}`);
+    try {
+      const result = await cloudinary.uploader.upload(filePath, {
+        folder: `windowhome/${category}`,
+        public_id: path.parse(file).name, // Gunakan nama file asli
+      });
+
+      // Simpan ke MongoDB
+      await Product.create({
+        category,
+        imageUrl: result.secure_url,
+        name: path.parse(file).name, // Simpan nama file tanpa ekstensi
+      });
+
+      console.log(`✅ ${file} berhasil diupload dan disimpan!`);
+    } catch (error) {
+      console.error(`❌ Gagal upload ${file}:`, error);
+    }
   }
 };
 
-(async () => {
-  await uploadFolder('pintu');
-  await uploadFolder('jendela');
-  await uploadFolder('kitchenset');
-})();
+// **Jalankan Upload untuk Setiap Kategori**
+const startUpload = async () => {
+  await uploadFolder("public/pintu", "pintu");
+  await uploadFolder("public/jendela", "jendela");
+  await uploadFolder("public/kitchenset", "kitchenset");
+  await uploadFolder("public/lainnya", "lainnya");
+
+  console.log("🚀 Semua gambar berhasil diupload dan disimpan ke MongoDB!");
+  mongoose.connection.close();
+};
+
+startUpload();

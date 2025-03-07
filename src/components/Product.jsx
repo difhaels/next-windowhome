@@ -1,19 +1,27 @@
-"use client"
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Container from "./Container";
 
 export default function Product() {
-  const categories = [
-    { name: "Pintu Sliding", images: Array(7).fill("/pintuKaca1.png") },
-    { name: "Pintu Utama", images: Array(7).fill("/pintuKaca1.png") },
-    { name: "Pintu Kamar", images: Array(7).fill("/pintuKaca1.png") },
-    { name: "Pintu Kaca", images: Array(7).fill("/pintuKaca1.png") },
-    { name: "Pintu Kayu", images: Array(7).fill("/pintuKaca1.png") },
-    { name: "Jendela Dobel", images: Array(7).fill("/pintuKaca1.png") },
-    { name: "Sekat Shower", images: Array(7).fill("/pintuKaca1.png") },
-  ];
-
+  const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
+
+  useEffect(() => {
+    fetch("/api/products")
+      .then((res) => res.json())
+      .then((data) => {
+        const grouped = data.reduce((acc, item) => {
+          const category = acc.find((cat) => cat.name === item.category);
+          if (category) {
+            category.images.push(item.imageUrl);
+          } else {
+            acc.push({ name: item.category, images: [item.imageUrl] });
+          }
+          return acc;
+        }, []);
+        setCategories(grouped);
+      });
+  }, []);
 
   const filteredCategories =
     selectedCategory === "All"
@@ -23,7 +31,7 @@ export default function Product() {
   return (
     <section className="pt-10 sm:pt-16">
       <Container>
-      <h3 className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit">PRODUK</h3>
+        <h3 className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit">PRODUK</h3>
         <div className="flex flex-wrap items-center gap-4 mb-6">
           <h5 className="text-lg font-medium">Kategori :</h5>
           <select
