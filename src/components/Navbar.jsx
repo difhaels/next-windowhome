@@ -21,9 +21,7 @@ function Navbar() {
             <Image
               src={logo}
               alt="Logo"
-              width={40}
-              height={40}
-              className="h-10 w-10"
+              className="h-12 w-auto"
             />
             <span className="text-white text-lg font-semibold">WindowHome</span>
           </Link>

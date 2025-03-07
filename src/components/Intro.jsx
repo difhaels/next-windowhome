@@ -8,8 +8,7 @@ function Intro() {
         <h1 className="text-4xl font-semibold">Kusen Aluminium Window Home</h1>
         <div className="w-20 h-1 bg-gray-500 mx-auto my-4 rounded-full"></div>
         <h1 className="text-xl">
-          Kami merupakan spesialis jasa pembuatan dan pemasangan Kusen Pintu Aluminium, dan Jendela Aluminium. Segera Hubungi Kami untuk informasi selengkapnya.
-        </h1>
+        Kami adalah spesialis dalam pembuatan dan pemasangan berbagai produk berkualitas berbahan aluminium, mulai dari kusen, pintu, dan jendela aluminium hingga kitchen set, partisi, sekat ruangan, dan berbagai kebutuhan custom lainnya. Dengan pengalaman dan keahlian di bidang ini, kami siap memberikan solusi terbaik yang sesuai dengan kebutuhan dan desain interior maupun eksterior Anda. Hubungi kami sekarang untuk konsultasi dan informasi lebih lanjut mengenai layanan dan produk yang kami tawarkan!</h1>
       </Container>
     </div>
   );

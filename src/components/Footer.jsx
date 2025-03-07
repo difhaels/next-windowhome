@@ -16,7 +16,7 @@ function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <img src="/logo.png" alt="Company Logo" className="h-10" />
+              <img src="/logo.png" alt="Company Logo" className="h-16" />
               <div>
                 <h1 className="text-lg font-semibold">WINDOW HOME</h1>
                 <h1>Kusen Aluminium</h1>
