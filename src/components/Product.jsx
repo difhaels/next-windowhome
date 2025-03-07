@@ -4,7 +4,9 @@ import Container from "./Container";
 
 export default function Product({ full }) {
   const [categories, setCategories] = useState([]);
+  const [filteredCategories, setFilteredCategories] = useState([]);
   const [randomProducts, setRandomProducts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
     fetch("/api/products")
@@ -24,9 +26,9 @@ export default function Product({ full }) {
         }));
 
         setCategories(formattedCategories);
+        setFilteredCategories(formattedCategories);
 
         if (!full) {
-          // Ambil 18 produk random dari seluruh kategori
           const allProducts = formattedCategories.flatMap((cat) => cat.images);
           const shuffled = allProducts.sort(() => 0.5 - Math.random()).slice(0, 18);
           setRandomProducts(shuffled);
@@ -35,18 +37,29 @@ export default function Product({ full }) {
       .catch((error) => console.error("Error fetching products:", error));
   }, [full]);
 
+  const handleCategoryChange = (e) => {
+    const selected = e.target.value;
+    setSelectedCategory(selected);
+
+    if (selected === "All") {
+      setFilteredCategories(categories);
+    } else {
+      setFilteredCategories(categories.filter((cat) => cat.name === selected));
+    }
+  };
+
   return (
     <section className="pt-10 sm:pt-16">
       <Container>
         <h3 className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit">PRODUK</h3>
 
-        {/* Jika full true, tampilkan kategori */}
         {full && (
           <div className="flex flex-wrap items-center gap-4 mb-6">
             <h5 className="text-lg font-medium">Kategori :</h5>
             <select
               className="border border-gray-300 p-2 text-sm"
-              onChange={(e) => setCategories([categories.find((cat) => cat.name === e.target.value)])}
+              value={selectedCategory}
+              onChange={handleCategoryChange}
             >
               <option value="All">All</option>
               {categories.map((category, index) => (
@@ -58,9 +71,8 @@ export default function Product({ full }) {
           </div>
         )}
 
-        {/* Jika full true, tampilkan semua kategori, jika false, hanya 18 random */}
         {full
-          ? categories.map((category, index) => (
+          ? filteredCategories.map((category, index) => (
               <div key={index} className="mb-8">
                 <p className="text-lg font-semibold mb-4">{category.name}</p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -73,8 +85,7 @@ export default function Product({ full }) {
                 </div>
               </div>
             ))
-          : // Jika full false, hanya tampilkan 18 produk random
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          : <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
               {randomProducts.map((image, idx) => (
                 <div key={idx} className="bg-white shadow-md overflow-hidden">
                   <img src={image.url} alt={image.name} className="w-full h-40 object-cover" />
@@ -83,7 +94,6 @@ export default function Product({ full }) {
               ))}
             </div>}
 
-        {/* Jika full false, tampilkan tombol "Lihat Lainnya" */}
         {!full && (
           <div className="mt-6 text-center">
             <a href="/product" className="px-6 py-2 bg-[#222F99] text-white rounded-md">
