@@ -8,30 +8,11 @@ export async function GET() {
   try {
     await client.connect();
     const db = client.db("windowhome");
-    const products = await db.collection("products").find().toArray();
+    const products = await db.collection("products").find().limit(10).toArray();
 
-    const response = NextResponse.json(products, { status: 200 });
 
-    // Tambahkan CORS Headers
-    response.headers.set("Access-Control-Allow-Origin", "*");
-    response.headers.set("Access-Control-Allow-Methods", "GET, OPTIONS");
-    response.headers.set("Access-Control-Allow-Headers", "Content-Type");
-
-    return response;
+    return NextResponse.json(products, { status: 200 });
   } catch (error) {
-    return NextResponse.json(
-      { error: "Failed to fetch products" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to fetch products" }, { status: 500 });
   }
-}
-
-// Tangani preflight request (CORS OPTIONS)
-export async function OPTIONS() {
-  const response = new NextResponse(null, { status: 200 });
-  response.headers.set("Access-Control-Allow-Origin", "*");
-  response.headers.set("Access-Control-Allow-Methods", "GET, OPTIONS");
-  response.headers.set("Access-Control-Allow-Headers", "Content-Type");
-
-  return response;
 }
