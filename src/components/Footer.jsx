@@ -5,6 +5,7 @@ import {
   FaWhatsapp,
   FaPhone,
   FaMapMarkerAlt,
+  FaYoutube,
 } from "react-icons/fa";
 import Container from "./Container";
 
@@ -28,15 +29,18 @@ function Footer() {
               <a href="https://www.instagram.com/kusenaluminium_windowhome?igsh=MWVnNm16bmFnbXp0cw==" target="_blank"  className="text-white text-xl">
                 <FaInstagram />
               </a>
+              <a href="https://youtube.com/@kusenaluminiumwindowhome?si=df82Nwe1DvxC8AXb" target="_blank"  className="text-white text-xl">
+                <FaYoutube />
+              </a>
             </div>
           </div>
           <div>
             <h5 className="text-lg font-semibold mb-2">Kontak</h5>
             <p className="flex items-center space-x-2">
-              <FaWhatsapp /> <span>+62 812 3456 7890</span>
+              <FaWhatsapp /> <span>0821 - 2410 - 6727</span>
             </p>
             <p className="flex items-center space-x-2">
-              <FaPhone /> <span>(021) 123-4567</span>
+              <FaPhone /> <span>0821 - 2111 - 0038</span>
             </p>
           </div>
           <div>
@@ -44,8 +48,19 @@ function Footer() {
             <div className="flex items-start space-x-3">
               <FaMapMarkerAlt size={20} />
               <p>
-                RT001, RW05, No257, KP.Cibitung, Kel.Padurenan, Kec.Mustika
-                Jaya, Kota Bekasi
+                Jl. Raya Cikiwul No. 51, RT 03/RW 05, Kelurahan Cikiwul, Kecamatan Bandar Gerbang, 17152 (Pusat)
+              </p>
+            </div>
+            <div className="flex items-start space-x-3 my-4">
+              <FaMapMarkerAlt size={20} />
+              <p>
+                Jl. Pasir Angin, RT 03/RW 03, Kecamatan Cileungsi, Kabupaten Bogor, 16820 (Cabang)
+              </p>
+            </div>
+            <div className="flex items-start space-x-3">
+              <FaMapMarkerAlt size={20} />
+              <p>
+                Jl. Tiga Putra, Gang 11, Blok Singkuk No. 12, Kelurahan Meruyung, Kecamatan Limo, Kota Depok (Cabang)
               </p>
             </div>
           </div>

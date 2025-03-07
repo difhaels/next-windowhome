@@ -32,7 +32,7 @@ function Services() {
 
             <p className="text-sm text-gray-700">{service.text}</p>
             <div className="mt-4">
-              <a href="https://github.com/difhaels" className="bg-green-600 text-white px-4 py-2 rounded-md text-sm">Hubungi</a>
+              <a href="https://wa.me/628212410672" className="bg-green-600 text-white px-4 py-2 rounded-md text-sm">Hubungi</a>
             </div>
           </div>
         ))}
