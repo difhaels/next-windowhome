@@ -39,7 +39,7 @@ function About() {
           <div>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.488275271218!2d106.99747889999999!3d-6.3307253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69950ed2f10e63%3A0xef182ba8e0176738!2sWindowhome!5e0!3m2!1sid!2sid!4v1741319519319!5m2!1sid!2sid"
-              className="w-full h-72 border border-gray-400 rounded-lg"
+              className="w-full h-72 border border-gray-400"
               allowFullScreen=""
               loading="lazy"
               title="Lokasi Kami"

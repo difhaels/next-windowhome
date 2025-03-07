@@ -8,8 +8,7 @@ export async function GET() {
   try {
     await client.connect();
     const db = client.db("windowhome");
-    const products = await db.collection("products").find().limit(10).toArray();
-
+    const products = await db.collection("products").find().toArray();
 
     return NextResponse.json(products, { status: 200 });
   } catch (error) {
