@@ -8,7 +8,7 @@ export const metadata = {
     title: "Produk Kami - Kusen Aluminium Window Home",
     description: "Lihat berbagai pilihan produk aluminium terbaik untuk rumah dan bangunan Anda, dibuat dengan material berkualitas tinggi.",
     url: "https://kusenaluminiumwindowhome.id/product",
-    images: [{ url: "https://kusenaluminiumwindowhome.id/og-produk.png", width: 1280, height: 1014 }],
+    images: [{ url: "https://kusenaluminiumwindowhome.id/og-produk.png", width: 2516, height: 1158 }],
     type: "website",
   },
   twitter: {

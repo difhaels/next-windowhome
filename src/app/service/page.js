@@ -8,7 +8,7 @@ export const metadata = {
     title: "Layanan Kami - Kusen Aluminium Window Home",
     description: "Jelajahi berbagai layanan pemasangan kusen aluminium, pintu, dan jendela kaca dengan hasil yang presisi dan tahan lama.",
     url: "https://kusenaluminiumwindowhome.id/service",
-    images: [{ url: "https://kusenaluminiumwindowhome.id/og-layanan.png", width: 1280, height: 1014 }],
+    images: [{ url: "https://kusenaluminiumwindowhome.id/og-layanan.png", width: 2546, height: 1180 }],
     type: "website",
   },
   twitter: {

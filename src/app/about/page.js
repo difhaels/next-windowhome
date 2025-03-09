@@ -8,14 +8,14 @@ export const metadata = {
     title: "Tentang Kami - Kusen Aluminium Window Home",
     description: "Pelajari lebih lanjut tentang Kusen Aluminium Window Home, visi, misi, dan komitmen kami dalam memberikan layanan terbaik.",
     url: "https://kusenaluminiumwindowhome.id/about",
-    images: [{ url: "https://kusenaluminiumwindowhome.id/og-tentang.png", width: 1280, height: 1014 }],
+    images: [{ url: "https://kusenaluminiumwindowhome.id/og-image.png", width: 2516, height: 1158 }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Tentang Kami - Kusen Aluminium Window Home",
     description: "Kenali lebih dalam siapa kami, layanan kami, dan bagaimana kami membantu mewujudkan desain rumah impian Anda.",
-    images: ["https://kusenaluminiumwindowhome.id/og-tentang.png"],
+    images: ["https://kusenaluminiumwindowhome.id/og-image.png"],
   },
 };
 
