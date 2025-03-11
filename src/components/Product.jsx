@@ -8,6 +8,7 @@ export default function Product({ full }) {
   const [filteredCategories, setFilteredCategories] = useState([]);
   const [randomProducts, setRandomProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [isLoading, setIsLoading] = useState(true); // 🔹 Tambahkan state loading
 
   useEffect(() => {
     fetch("/api/products")
@@ -34,6 +35,8 @@ export default function Product({ full }) {
           const shuffled = allProducts.sort(() => 0.5 - Math.random()).slice(0, 18);
           setRandomProducts(shuffled);
         }
+
+        setIsLoading(false); // 🔹 Matikan loading setelah data diambil
       })
       .catch((error) => console.error("Error fetching products:", error));
   }, [full]);
@@ -52,10 +55,12 @@ export default function Product({ full }) {
   return (
     <section className="pt-10 sm:pt-16">
       <Container>
-        <h3 className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit" data-aos="fade-up">PRODUK</h3>
+        <h3 className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit" data-aos="fade-up">
+          PRODUK
+        </h3>
 
         {full && (
-          <div className="flex flex-wrap items-center gap-4 mb-6" data-aos="fade-up">
+          <div className="flex flex-wrap items-center gap-4 mb-6">
             <h5 className="text-lg font-medium">Kategori :</h5>
             <select
               className="border border-gray-300 p-2 text-sm"
@@ -72,55 +77,63 @@ export default function Product({ full }) {
           </div>
         )}
 
-        {full
-          ? filteredCategories.map((category, index) => (
-              <div key={index} className="mb-8">
-                <p className="text-lg font-semibold mb-4">{category.name}</p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                  {category.images.map((image, idx) => (
-                    <div key={idx} className="bg-white shadow-md overflow-hidden" data-aos="fade-up">
-                      <div className="relative w-full h-40">
-                        <Image 
-                          src={image.url} 
-                          alt={image.name} 
-                          fill 
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          loading="lazy"
-                        />
-                      </div>
-                      <p className="text-center text-sm font-medium p-2">
-                        {image.name.replace(/-/g, " ")}
-                      </p>
+
+        {isLoading ? (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {[...Array(18)].map((_, idx) => (
+              <div key={idx} className="bg-gray-200 animate-pulse h-48 rounded-md"></div>
+            ))}
+          </div>
+        ) : full ? (
+          filteredCategories.map((category, index) => (
+            <div key={index} className="mb-8">
+              <p className="text-lg font-semibold mb-4">{category.name}</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {category.images.map((image, idx) => (
+                  <div key={idx} className="bg-white shadow-md overflow-hidden">
+                    <div className="relative w-full h-40">
+                      <Image 
+                        src={image.url} 
+                        alt={image.name} 
+                        fill 
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        loading="lazy"
+                      />
                     </div>
-                  ))}
-                </div>
-              </div>
-            ))
-          : <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {randomProducts.map((image, idx) => (
-                <div key={idx} className="bg-white shadow-md overflow-hidden" data-aos="fade-up">
-                  <div className="relative w-full h-40">
-                    <Image 
-                      src={image.url} 
-                      alt={image.name} 
-                      fill 
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      loading="lazy"
-                    />
+                    <p className="text-center text-sm font-medium p-2">
+                      {image.name.replace(/-/g, " ")}
+                    </p>
                   </div>
-                  <p className="text-center text-sm font-medium p-2">
-                    {image.name.replace(/-/g, " ")}
-                  </p>
+                ))}
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {randomProducts.map((image, idx) => (
+              <div key={idx} className="bg-white shadow-md overflow-hidden">
+                <div className="relative w-full h-40">
+                  <Image 
+                    src={image.url} 
+                    alt={image.name} 
+                    fill 
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    loading="lazy"
+                  />
                 </div>
-                
-              ))}
-            </div>}
+                <p className="text-center text-sm font-medium p-2">
+                  {image.name.replace(/-/g, " ")}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
 
         {!full && (
           <div className="mt-6 text-center">
-            <a href="/product" className="px-6 py-2 bg-[#222F99] text-white rounded-md" data-aos="fade-up">
+            <a href="/product" className="px-6 py-2 bg-[#222F99] text-white rounded-md">
               Lihat Lainnya
             </a>
           </div>
