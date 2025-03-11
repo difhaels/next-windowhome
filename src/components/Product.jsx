@@ -8,7 +8,7 @@ export default function Product({ full }) {
   const [filteredCategories, setFilteredCategories] = useState([]);
   const [randomProducts, setRandomProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [isLoading, setIsLoading] = useState(true); // 🔹 Tambahkan state loading
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch("/api/products")
@@ -36,7 +36,7 @@ export default function Product({ full }) {
           setRandomProducts(shuffled);
         }
 
-        setIsLoading(false); // 🔹 Matikan loading setelah data diambil
+        setIsLoading(false); 
       })
       .catch((error) => console.error("Error fetching products:", error));
   }, [full]);
