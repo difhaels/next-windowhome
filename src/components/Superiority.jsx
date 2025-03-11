@@ -5,7 +5,7 @@ function Superiority() {
   return (
     <section className="pt-16">
       <Container>
-        <h3 className="text-center text-2xl font-semibold mb-6">
+        <h3 data-aos="fade-up" className="text-center text-2xl font-semibold mb-6">
           Keunggulan Rumah Kusen Aluminium
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

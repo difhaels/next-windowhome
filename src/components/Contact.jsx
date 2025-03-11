@@ -34,36 +34,45 @@ export default function Contact() {
   return (
     <section className="pt-10 sm:pt-16">
       <Container>
-        <h3 className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit">
+        <h3
+          className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit"
+          data-aos="fade-up"
+        >
           KONTAK
         </h3>
         <div className="grid md:grid-cols-2 gap-8 pt-10">
           {/* Left Section */}
           <div className="p-6 ">
-            <div className="flex items-center mb-4">
+            <div className="flex items-center mb-4" data-aos="fade-up">
               <img src="/logo.png" alt="Logo" className="w-auto h-16 mr-3" />
               <h2 className="text-xl font-semibold">WindowHome</h2>
             </div>
             <div className="mb-4">
-              <h4 className="text-2xl text-[#222F99]">Kontak</h4>
-              <p className="flex items-center gap-2 my-2">
+              <h4 className="text-2xl text-[#222F99]" data-aos="fade-up">
+                Kontak
+              </h4>
+              <p className="flex items-center gap-2 my-2" data-aos="fade-up">
                 <FaPhoneAlt className="text-[#FF2E63]" /> +62 821-2410-6727
               </p>
-              <p className="flex items-center gap-2 ">
+              <p className="flex items-center gap-2 " data-aos="fade-up">
                 <FaEnvelope className="text-[#FF2E63]" /> info@windowhome.com
               </p>
             </div>
             <div className="mb-4">
-              <h4 className="text-2xl text-[#222F99]">Workshop</h4>
-              <p className="flex items-start gap-2 mt-2">
+              <h4 className="text-2xl text-[#222F99]" data-aos="fade-up">Workshop</h4>
+              <p className="flex items-start gap-2 mt-2" data-aos="fade-up">
                 <FaMapMarkerAlt className="text-[#FF2E63]" /> RT001, RW05,
                 No257, KP.Cibitung, Kel.Padurenan, Kec.Mustika Jaya, Kota Bekasi
               </p>
             </div>
             <div>
-              <h4 className="text-2xl text-[#222F99]">Ikuti Kami</h4>
-              <div className="flex gap-3 mt-2">
-                <a href="https://www.facebook.com/share/16PPWKvsww/" target="_blank" rel="noreferrer">
+              <h4 className="text-2xl text-[#222F99]" data-aos="fade-up">Ikuti Kami</h4>
+              <div className="flex gap-3 mt-2" data-aos="fade-up">
+                <a
+                  href="https://www.facebook.com/share/16PPWKvsww/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaFacebook className="text-blue-600 text-2xl" />
                 </a>
                 <a
@@ -73,7 +82,11 @@ export default function Contact() {
                 >
                   <FaInstagram className="text-pink-500 text-2xl" />
                 </a>
-                <a href="https://youtube.com/@kusenaluminiumwindowhome?si=df82Nwe1DvxC8AXb" target="_blank" rel="noreferrer">
+                <a
+                  href="https://youtube.com/@kusenaluminiumwindowhome?si=df82Nwe1DvxC8AXb"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaYoutube className="text-red-500 text-2xl" />
                 </a>
               </div>
@@ -81,7 +94,7 @@ export default function Contact() {
           </div>
 
           {/* Right Section */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
             <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
             <form ref={form} onSubmit={sendEmail} className="space-y-4">
               <input

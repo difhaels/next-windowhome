@@ -52,10 +52,10 @@ export default function Product({ full }) {
   return (
     <section className="pt-10 sm:pt-16">
       <Container>
-        <h3 className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit">PRODUK</h3>
+        <h3 className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit" data-aos="fade-up">PRODUK</h3>
 
         {full && (
-          <div className="flex flex-wrap items-center gap-4 mb-6">
+          <div className="flex flex-wrap items-center gap-4 mb-6" data-aos="fade-up">
             <h5 className="text-lg font-medium">Kategori :</h5>
             <select
               className="border border-gray-300 p-2 text-sm"
@@ -78,7 +78,7 @@ export default function Product({ full }) {
                 <p className="text-lg font-semibold mb-4">{category.name}</p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                   {category.images.map((image, idx) => (
-                    <div key={idx} className="bg-white shadow-md overflow-hidden">
+                    <div key={idx} className="bg-white shadow-md overflow-hidden" data-aos="fade-up">
                       <div className="relative w-full h-40">
                         <Image 
                           src={image.url} 
@@ -99,7 +99,7 @@ export default function Product({ full }) {
             ))
           : <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
               {randomProducts.map((image, idx) => (
-                <div key={idx} className="bg-white shadow-md overflow-hidden">
+                <div key={idx} className="bg-white shadow-md overflow-hidden" data-aos="fade-up">
                   <div className="relative w-full h-40">
                     <Image 
                       src={image.url} 
@@ -120,7 +120,7 @@ export default function Product({ full }) {
 
         {!full && (
           <div className="mt-6 text-center">
-            <a href="/product" className="px-6 py-2 bg-[#222F99] text-white rounded-md">
+            <a href="/product" className="px-6 py-2 bg-[#222F99] text-white rounded-md" data-aos="fade-up">
               Lihat Lainnya
             </a>
           </div>
