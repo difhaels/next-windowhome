@@ -22,14 +22,14 @@ function Navbar() {
           <Link href="/" className="flex items-center space-x-3">
             <Image src={logo} alt="Logo" className="h-12 w-auto" />
             <div>
-              <h1 className="text-white text-lg font-semibold">
-                WindowHome
+              <h1 className="text-white text-lg font-semibold">WindowHome</h1>
+              <h1 className="text-white text-xs sm:hidden">
+                Solusi Kusen Aluminium Rumah Keluarga
               </h1>
-              <h1 className="text-white text-xs sm:hidden">Solusi Kusen Aluminium Rumah Keluarga</h1>
             </div>
           </Link>
           <button
-            className="text-white md:hidden focus:outline-none"
+            className="text-white md:hidden focus:outline-none border border-gray-300 p-2 rounded-md shadow-md bg-black/30 backdrop-blur-md transition-all duration-300 hover:bg-black/50"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? "✖" : "☰"}
