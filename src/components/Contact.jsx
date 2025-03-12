@@ -61,8 +61,7 @@ export default function Contact() {
             <div className="mb-4">
               <h4 className="text-2xl text-[#222F99]" data-aos="fade-up">Workshop</h4>
               <p className="flex items-start gap-2 mt-2" data-aos="fade-up">
-                <FaMapMarkerAlt className="text-[#FF2E63]" /> RT001, RW05,
-                No257, KP.Cibitung, Kel.Padurenan, Kec.Mustika Jaya, Kota Bekasi
+                <FaMapMarkerAlt className="text-[#FF2E63]" /> Jl. Raya Cikiwul No. 51, RT 03/RW 05, Kelurahan Cikiwul, Kecamatan Bandar Gerbang, 17152
               </p>
             </div>
             <div>
