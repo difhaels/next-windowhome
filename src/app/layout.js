@@ -47,11 +47,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any"/>
         <link rel="icon" type="image/png" href="/favicon-256x256.png"/>
         <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+
+        {/* Google Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16921236563"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16921236563');
+          `
+        }} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -62,3 +73,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
