@@ -55,7 +55,7 @@ export default function Product({ full }) {
   return (
     <section className="pt-10 sm:pt-16">
       <Container>
-        <h3 className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit" data-aos="fade-up">
+        <h3 className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit">
           PRODUK
         </h3>
 
@@ -67,7 +67,7 @@ export default function Product({ full }) {
               value={selectedCategory}
               onChange={handleCategoryChange}
             >
-              <option value="All">All</option>
+              <option value="All">Semua</option>
               {categories.map((category, index) => (
                 <option key={index} value={category.name}>
                   {category.name}
