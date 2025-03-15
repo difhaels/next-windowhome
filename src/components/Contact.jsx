@@ -3,11 +3,11 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import {
   FaPhoneAlt,
-  FaEnvelope,
   FaMapMarkerAlt,
   FaFacebook,
   FaInstagram,
   FaYoutube,
+  FaWhatsapp,
 } from "react-icons/fa";
 import Container from "./Container";
 
@@ -55,13 +55,19 @@ export default function Contact() {
                 <FaPhoneAlt className="text-[#FF2E63]" /> +62 821-2410-6727
               </p>
               <p className="flex items-center gap-2 " data-aos="fade-up">
-                <FaEnvelope className="text-[#FF2E63]" /> info@windowhome.com
+                <FaWhatsapp className="text-[#FF2E63]" /> 0821 - 2111 - 0038
               </p>
             </div>
             <div className="mb-4">
               <h4 className="text-2xl text-[#222F99]" data-aos="fade-up">Workshop</h4>
               <p className="flex items-start gap-2 mt-2" data-aos="fade-up">
-                <FaMapMarkerAlt className="text-[#FF2E63]" /> Jl. Raya Cikiwul No. 51, RT 03/RW 05, Kelurahan Cikiwul, Kecamatan Bandar Gerbang, 17152
+                <FaMapMarkerAlt className="text-[#FF2E63]" /> Jl. Raya Cikiwul No. 51, RT 03/RW 05, Kelurahan Cikiwul, Kecamatan Bandar Gerbang, 17152 (Pusat)
+              </p>
+              <p className="flex items-start gap-2 mt-3" data-aos="fade-up">
+                <FaMapMarkerAlt className="text-[#FF2E63]" /> Jl. Pasir Angin, RT 03/RW 03, Kecamatan Cileungsi, Kabupaten Bogor, 16820 (Cabang)
+              </p>
+              <p className="flex items-start gap-2 mt-3" data-aos="fade-up">
+                <FaMapMarkerAlt className="text-[#FF2E63]" /> Jl. Tiga Putra, Gang 11, Blok Singkuk No. 12, Kelurahan Meruyung, Kecamatan Limo, Kota Depok (Cabang)
               </p>
             </div>
             <div>
@@ -94,13 +100,13 @@ export default function Contact() {
 
           {/* Right Section */}
           <div className="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
-            <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-xl font-semibold mb-4">Hubungi Kami</h3>
             <form ref={form} onSubmit={sendEmail} className="space-y-4">
               <input
                 type="text"
                 name="user_name"
                 className="w-full p-2 border rounded"
-                placeholder="Name"
+                placeholder="Nama"
                 required
               />
               <input
@@ -121,20 +127,20 @@ export default function Contact() {
                 type="text"
                 name="user_subject"
                 className="w-full p-2 border rounded"
-                placeholder="Subject"
+                placeholder="Subjek"
                 required
               />
               <textarea
                 name="message"
                 rows="4"
                 className="w-full p-2 border rounded"
-                placeholder="Your Message"
+                placeholder="Pesan saya"
               ></textarea>
               <button
                 type="submit"
                 className="w-full bg-[#222F99] cursor-pointer text-white py-2 rounded hover:bg-blue-700 transition"
               >
-                Send
+                Kirim
               </button>
             </form>
           </div>
