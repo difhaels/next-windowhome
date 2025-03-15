@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Banner() {
   return (
     <Image
-      src="/banner.png"
+      src="/minibanner.png"
       alt="Banner"
       width={1920}
       height={1080}
