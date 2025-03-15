@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AOSProvider from "@/components/AOSProvider";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,25 +53,29 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" sizes="any"/>
         <link rel="icon" type="image/png" href="/favicon-256x256.png"/>
         <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-
-        {/* Google Tag */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16921236563"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-16921236563');
-          `
-        }} />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AOSProvider />
+        
+        {/* Google Tag Manager */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16921236563"
+        />
+        <Script
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16921236563');
+            `,
+          }}
+        />
+
         {children}
       </body>
     </html>
   );
 }
-

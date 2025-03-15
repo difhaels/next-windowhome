@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Container from "./Container";
 
@@ -21,22 +22,39 @@ function Services() {
     },
   ];
 
+  const handleClick = () => {
+    if (window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-16921236563/CONVERSION_ID",
+      });
+    }
+  };
+
   return (
     <section className="pt-10 sm:pt-16">
       <Container>
-      <h3 className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit" data-aos="fade-up">LAYANAN KAMI</h3>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {services.map((service, index) => (
-          <div key={index} className="bg-white shadow-md p-4 text-center rounded-lg" data-aos="fade-up">
-            <img src={service.img} alt="Service" className="mx-auto mb-3 w-full h-auto object-cover" />
-
-            <p className="text-sm text-gray-700">{service.text}</p>
-            <div className="mt-4">
-              <a href="https://wa.me/6282124106727" className="bg-green-600 text-white px-4 py-2 rounded-md text-sm">Hubungi</a>
+        <h3 className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit" data-aos="fade-up">
+          LAYANAN KAMI
+        </h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {services.map((service, index) => (
+            <div key={index} className="bg-white shadow-md p-4 text-center rounded-lg" data-aos="fade-up">
+              <img src={service.img} alt="Service" className="mx-auto mb-3 w-full h-auto object-cover" />
+              <p className="text-sm text-gray-700">{service.text}</p>
+              <div className="mt-4">
+                <a
+                  href="https://wa.me/6282124106727"
+                  className="bg-green-600 text-white px-4 py-2 rounded-md text-sm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleClick}
+                >
+                  Hubungi
+                </a>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       </Container>
     </section>
   );
