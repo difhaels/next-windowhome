@@ -50,19 +50,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any"/>
-        <link rel="icon" type="image/png" href="/favicon-256x256.png"/>
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" href="/favicon-256x256.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AOSProvider />
-        
+
         {/* Google Tag Manager */}
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=AW-16921236563"
         />
         <Script
+          id="google-analytics"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `

@@ -1,12 +1,12 @@
-"use client"
+"use client";
 import React from "react";
 import Image from "next/image";
 
 export default function WhatsAppButton() {
   const handleClick = () => {
-    if (window.gtag) {
+    if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "conversion", {
-        send_to: "AW-16921236563/CONVERSION_ID",
+        send_to: "AW-16921236563/ny9-CNn08aoaENOo1oQ_",
       });
     }
   };
