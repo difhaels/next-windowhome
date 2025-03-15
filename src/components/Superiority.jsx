@@ -17,7 +17,7 @@ function Superiority() {
             data-aos="fade-up"
           >
             <img
-              src="/teamwork.svg"
+              src="/pekerja.svg"
               alt="Tim Profesional"
               className="mx-auto  w-auto h-50"
             />
@@ -35,7 +35,7 @@ function Superiority() {
             data-aos="fade-up"
           >
             <img
-              src="/bestprice.svg"
+              src="/harga.svg"
               alt="Harga Terjangkau"
               className="mx-auto  w-auto h-50"
             />
@@ -53,7 +53,7 @@ function Superiority() {
             data-aos="fade-up"
           >
             <img
-              src="/faster.svg"
+              src="/cepat.svg"
               alt="Proses Cepat"
               className="mx-auto  w-auto h-50"
             />
@@ -69,7 +69,7 @@ function Superiority() {
             data-aos="fade-up"
           >
             <img
-              src="/guarantee.svg"
+              src="/garansi.svg"
               alt="Bergaransi"
               className="mx-auto  w-auto h-50"
             />
