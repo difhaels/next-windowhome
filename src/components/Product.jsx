@@ -101,7 +101,7 @@ export default function Product({ full }) {
                         loading="lazy"
                       />
                     </div>
-                    <p className="text-center text-sm font-medium p-2">
+                    <p className="text-center text-sm font-medium p-2 capitalize">
                       {image.name.replace(/-/g, " ")}
                     </p>
                   </div>
@@ -123,7 +123,7 @@ export default function Product({ full }) {
                     loading="lazy"
                   />
                 </div>
-                <p className="text-center text-sm font-medium p-2">
+                <p className="text-center text-sm font-medium p-2 capitalize">
                   {image.name.replace(/-/g, " ")}
                 </p>
               </div>
