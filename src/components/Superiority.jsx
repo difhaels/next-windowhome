@@ -21,10 +21,10 @@ function Superiority() {
               alt="Tim Profesional"
               className="mx-auto  w-auto h-50"
             />
-            <p className="text-lg font-semibold text-gray-800">
+            <p className="text-lg font-semibold text-[#222f99]">
               Tim Profesional
             </p>
-            <p className="text-sm text-gray-600 mt-2">
+            <p className="text-sm text-gray-800 mt-2">
               Tim berpengalaman dengan hasil pemasangan presisi, rapi, dan
               berkualitas tinggi.
             </p>
@@ -39,10 +39,10 @@ function Superiority() {
               alt="Harga Terjangkau"
               className="mx-auto  w-auto h-50"
             />
-            <p className="text-lg font-semibold text-gray-800">
+            <p className="text-lg font-semibold text-[#222f99]">
               Harga Terjangkau
             </p>
-            <p className="text-sm text-gray-600 mt-2">
+            <p className="text-sm text-gray-800 mt-2">
               Dapatkan layanan berkualitas dengan harga yang bersaing dan
               transparan.
             </p>
@@ -57,8 +57,8 @@ function Superiority() {
               alt="Proses Cepat"
               className="mx-auto  w-auto h-50"
             />
-            <p className="text-lg font-semibold text-gray-800">Proses Cepat</p>
-            <p className="text-sm text-gray-600 mt-2">
+            <p className="text-lg font-semibold text-[#222f99]">Proses Cepat</p>
+            <p className="text-sm text-gray-800 mt-2">
               Kami memastikan pemasangan dilakukan dengan efisiensi tanpa
               mengurangi kualitas.
             </p>
@@ -73,8 +73,8 @@ function Superiority() {
               alt="Bergaransi"
               className="mx-auto  w-auto h-50"
             />
-            <p className="text-lg font-semibold text-gray-800">Bergaransi</p>
-            <p className="text-sm text-gray-600 mt-2">
+            <p className="text-lg font-semibold text-[#222f99]">Bergaransi</p>
+            <p className="text-sm text-gray-800 mt-2">
               Jaminan kualitas terbaik dengan layanan purna jual yang dapat
               diandalkan.
             </p>
