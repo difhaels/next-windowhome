@@ -8,6 +8,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import Container from "./Container";
+import { getFormattedPhoneNumber } from "@/utils/nohp";
 
 function Footer() {
   return (
@@ -37,10 +38,10 @@ function Footer() {
           <div>
             <h5 className="text-lg font-semibold mb-2">Kontak</h5>
             <p className="flex items-center space-x-2">
-              <FaWhatsapp /> <span>0821 - 2410 - 6727</span>
+              <FaWhatsapp /> <span>{getFormattedPhoneNumber()}</span>
             </p>
             <p className="flex items-center space-x-2">
-              <FaPhone /> <span>0821 - 2111 - 0038</span>
+              <FaPhone /> <span>{getFormattedPhoneNumber()}</span>
             </p>
           </div>
           <div>

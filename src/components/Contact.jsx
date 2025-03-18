@@ -10,6 +10,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import Container from "./Container";
+import { getFormattedPhoneNumber } from "@/utils/nohp";
 
 export default function Contact() {
   const form = useRef();
@@ -52,10 +53,10 @@ export default function Contact() {
                 Kontak
               </h4>
               <p className="flex items-center gap-2 my-2" data-aos="fade-up">
-                <FaPhoneAlt className="text-[#FF2E63]" /> +62 821-2410-6727
+                <FaPhoneAlt className="text-[#FF2E63]" /> {getFormattedPhoneNumber()}
               </p>
               <p className="flex items-center gap-2 " data-aos="fade-up">
-                <FaWhatsapp className="text-[#FF2E63]" /> 0821 - 2111 - 0038
+                <FaWhatsapp className="text-[#FF2E63]" /> {getFormattedPhoneNumber()}
               </p>
             </div>
             <div className="mb-4">

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import {phoneNumber} from "@/utils/nohp";
 
 export default function WhatsAppButton() {
   const handleClick = () => {
@@ -22,7 +23,7 @@ export default function WhatsAppButton() {
         </div>
       </div>
       <a
-        href="https://wa.me/6282124106727"
+        href={`https://wa.me/${phoneNumber}`}
         target="_blank"
         rel="noopener noreferrer"
         onClick={handleClick}

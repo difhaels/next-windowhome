@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Container from "./Container";
+import { phoneNumber } from "@/utils/nohp";
 
 function Services() {
   const services = [
@@ -54,7 +55,7 @@ function Services() {
               <p className="text-sm text-gray-700">{service.text}</p>
               <div className="mt-4">
                 <a
-                  href="https://wa.me/6282124106727"
+                  href={`https://wa.me/${phoneNumber}`}
                   className="bg-green-600 text-white px-4 py-2 rounded-md text-sm"
                   target="_blank"
                   rel="noopener noreferrer"
