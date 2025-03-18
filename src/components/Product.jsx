@@ -53,7 +53,7 @@ export default function Product({ full }) {
   };
 
   return (
-    <section className="pt-10 sm:pt-16">
+    <section className="pt-10 sm:pt-16" id="projects">
       <Container>
         <h3 className="mx-auto text-xl font-semibold mb-6 py-1 text-white px-5 bg-[#222F99] w-fit">
           PRODUK
