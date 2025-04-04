@@ -10,12 +10,12 @@ export default function Banner() {
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
         <Image
-          src="/bg-blur.jpg"
+          src="/bg.jpg"
           alt="Banner"
           layout="fill"
           objectFit="cover"
           priority
-          className="brightness-90"
+          className="brightness-80"
         />
       </div>
 
