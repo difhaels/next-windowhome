@@ -13,7 +13,7 @@ export default function WhatsAppButton() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 sm:right-16 flex items-center space-x-3">
+    <div className="fixed bottom-6 right-6 sm:right-16 flex items-center space-x-3 z-50">
       <div className="flex flex-col space-y-2">
         <div className="bg-white text-gray-700 px-3 py-1 rounded-lg shadow-md text-xs">
           Konsultasi Gratis
