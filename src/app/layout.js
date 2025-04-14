@@ -53,14 +53,11 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" href="/favicon-256x256.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <AOSProvider />
-
+        
         {/* Google Tag Manager */}
         <Script
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16921236563"
+          src="https://www.googletagmanager.com/gtag/js?id=GTM-K4CKDJMB" 
         />
         <Script
           id="google-analytics"
@@ -70,10 +67,23 @@ export default function RootLayout({ children }) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-16921236563');
+              gtag('config', 'GTM-K4CKDJMB'); 
             `,
           }}
         />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <AOSProvider />
+
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe 
+            src="https://www.googletagmanager.com/ns.html?id=GTM-K4CKDJMB" //
+            height="0" 
+            width="0" 
+            style={{ display: 'none', visibility: 'hidden' }}
+          ></iframe>
+        </noscript>
 
         {children}
       </body>
