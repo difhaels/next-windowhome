@@ -4,14 +4,6 @@ import Image from "next/image";
 import {phoneNumber} from "@/utils/nohp";
 
 export default function WhatsAppButton() {
-  const handleClick = () => {
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "conversion", {
-        send_to: "AW-16921236563/ny9-CNn08aoaENOo1oQ_",
-      });
-    }
-  };
-
   return (
     <div className="fixed bottom-6 right-6 sm:right-16 flex items-center space-x-3 z-50">
       <div className="flex flex-col space-y-2">
@@ -26,7 +18,6 @@ export default function WhatsAppButton() {
         href={`https://wa.me/${phoneNumber}`}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={handleClick}
         className="flex items-center justify-center bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition-all"
       >
         <Image src="/wa.svg" alt="WhatsApp" width={30} height={30} priority />

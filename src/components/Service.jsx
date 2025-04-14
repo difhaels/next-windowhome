@@ -23,13 +23,6 @@ function Services() {
     },
   ];
 
-  const handleClick = () => {
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "conversion", {
-        send_to: "AW-16921236563/ny9-CNn08aoaENOo1oQ_",
-      });
-    }
-  };
 
   return (
     <section className="pt-10 sm:pt-16">
@@ -59,7 +52,6 @@ function Services() {
                   className="bg-green-600 text-white px-4 py-2 rounded-md text-sm"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={handleClick}
                 >
                   Hubungi
                 </a>
