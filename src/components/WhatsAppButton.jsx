@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import {phoneNumber} from "@/utils/nohp";
+import { phoneNumber } from "@/utils/nohp";
 
 export default function WhatsAppButton() {
   return (
@@ -20,7 +20,14 @@ export default function WhatsAppButton() {
         rel="noopener noreferrer"
         className="flex items-center justify-center bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition-all"
       >
-        <Image src="/wa.svg" alt="WhatsApp" width={30} height={30} priority />
+        <Image
+          src="/wa.svg"
+          alt="WhatsApp"
+          width={30}
+          height={30}
+          priority
+          className="pointer-events-none" // agar tidak menghalangi klik
+        />
       </a>
     </div>
   );
