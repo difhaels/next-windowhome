@@ -49,7 +49,7 @@ function Footer() {
             <div className="flex items-start space-x-3">
               <FaMapMarkerAlt size={20} />
               <p>
-                Jl. Raya Cikiwul No. 51, RT 03/RW 05, Kelurahan Cikiwul, Kecamatan Bandar Gerbang, 17152 (Pusat)
+                Jl. Raya Cikiwul No. 51, RT 03/RW 05, Kelurahan Cikiwul, Kecamatan Bantar Gebang, 17152 (Pusat)
               </p>
             </div>
             <div className="flex items-start space-x-3 my-4">
